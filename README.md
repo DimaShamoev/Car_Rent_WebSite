@@ -1,4 +1,4 @@
 # React + TypeScript + Vite
 <p>
-  Comming Soon
+  Full Info Coming Soon 🔎
 </p>
