@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: rgb(240, 240, 240);
+}
+
+.container {
+  width: 1550px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.main {
+  padding: 30px 0;
+}
+
+.Header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: white;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Header ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 700px;
+  max-width: 100%;
+}
+
+.Header ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  text-shadow: 0 0 0.6px black;
+}
+
+.Header .sign-in {
+  display: flex;
+  gap: 10px;
+  padding: 5px 15px;
+  font-size: 17px;
+}
+
+.Header .sign-in .sign-in-btn {
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  padding: 3px 10px 5px 10px;
+}
+
+.Header .sign-in .sign-up-btn {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 94, 255);
+  border: none;
+  padding: 3px 10px 5px 10px;
+}
+
+.expand-menu-block {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  display: none;
+}
+
+.top-line {
+  height: 3px;
+  width: 30px;
+  background-color: black;
+}
+
+.bottom-line {
+  height: 3.1px;
+  width: 30px;
+  background-color: black;
+}
+
+.Aside-menu {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  width: 0;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Aside-menu.active {
+  width: 200px;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transition: 1s ease-in;
+}
+
+.overlay.active {
+  bottom: 0;
+}
+
+@media screen and (max-width: 1030px) {
+  .Header ul {
+    width: 450px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Header ul,
+  .Header .sign-in {
+    display: none;
+  }
+
+  .expand-menu-block {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {  
+  .Header ul {
+    display: none;
+  }
+
+  .Header .sign-in {
+    display: none;
+  }
+
+  .expand-menu-block {
+    display: flex;
+  }
+}
