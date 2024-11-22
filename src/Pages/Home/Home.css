@@ -143,7 +143,8 @@
 }
 
 .lifestyle-car-img {
-    background-color: rgb(232, 232, 232);
+    background-color: rgba(232, 232, 232, 0.2);
+    border-radius: 20px;
 }
 
 .lifestyle-car-img img {
@@ -164,6 +165,48 @@
 .lifestyle-car-name.hovered {
     opacity: 1;
     transform: translate(0);
+}
+
+.offers-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 100px 50px;
+    background-color: #F9FBFC;
+    overflow: hidden;
+}
+
+.offers-title {
+    width: 50%;
+}
+
+.offers-title p {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 50%;
+    gap: 40px 100px;
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.offer-card-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.offer-card-txt {
+    font-size: 15px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 1180px) {

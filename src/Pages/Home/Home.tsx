@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./Home.css";
 import AsideMenu from "../../components/AsideMenu";
 
@@ -59,17 +60,66 @@ const Home: React.FunctionComponent = () => {
         },
     ];
 
-    const [count, setCount] = useState<number>(0);
 
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-        setCount((prev) => prev + 1); // Update the state every 100ms
-        }, 5000);
+    const textAnimation = {
+        hidden: {
+          x: -200,
+          opacity: 0
+        },
+        visible: {
+          x: 0,
+          opacity: 1,
+          transition: {
+            duration: 1,
+            type: 'spring',
+          }
+        }
+      };
 
-        return () => {
-            if (count === 300) clearInterval(interval)
-        }; // Cleanup on component unmount
-    }, []); // Empty dependency array ensures this runs only once
+    const upToDown = {
+        hidden: {
+            y: -200,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1 ,
+            transition: {
+                duration: 1,
+                type: 'spring',
+            }
+        }
+    }
+
+    const downToUp = {
+        hidden: {
+            y: 200,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+                type: 'spring',
+            }
+        }
+    }
+
+    const rightToLeft = {
+        hidden: {
+            x: 200,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+                type: 'spring',
+            }
+        }
+    }
 
     return (
         <div className="home_page">
@@ -202,7 +252,86 @@ const Home: React.FunctionComponent = () => {
                     ))}
                 </div>
             </div>
-            {count}
+
+            <motion.div
+                className="offers-block"
+                initial='hidden'
+                whileInView='visible'
+            >
+                <motion.div
+                    className="offers-title"
+                    variants={textAnimation}
+                >
+                    <p>We're BIG on what</p>
+                    <p>matters to you</p>
+                </motion.div>
+                <motion.div
+                    className="offers"
+                    initial='hidden'
+                    whileInView='visible'
+                >
+                        <motion.div
+                            className="offer-card offer-1"
+                            variants={upToDown}
+                        >
+                            <div className="offer-card-img">
+                                <img src="img/offer-icon-1.svg" alt="" />
+                            </div>
+                            <div className="offer-card-title">
+                                Special Financing Offers    
+                            </div>
+                            <div className="offer-card-txt">
+                                Our stress-free finance department that can find financial solutions to save you money.
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="offer-card offer-2"
+                            variants={rightToLeft}
+                        >
+                            <div className="offer-card-img">
+                                <img src="img/offer-icon-2.svg" alt="" />
+                            </div>
+                            <div className="offer-card-title">
+                                Trusted Car Dealership 
+                            </div>
+                            <div className="offer-card-txt">
+                                Our stress-free finance department that can find financial solutions to save you money.
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="offer-card offer-3"
+                            variants={downToUp}
+                        >
+                            <div className="offer-card-img">
+                                <img src="img/offer-icon-3.svg" alt="" />
+                            </div>
+                            <div className="offer-card-title">
+                                Transparent Pricing
+                            </div>
+                            <div className="offer-card-txt">
+                                Our stress-free finance department that can find financial solutions to save you money.
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="offer-card offer-4"
+                            variants={rightToLeft}
+                        >
+                            <div className="offer-card-img">
+                                <img src="img/offer-icon-4.svg" alt="" />
+                            </div>
+                            <div className="offer-card-title">
+                                Expert Car Service   
+                            </div>
+                            <div className="offer-card-txt">
+                                Our stress-free finance department that can find financial solutions to save you money.
+                            </div>
+                        </motion.div>
+                </motion.div>
+            </motion.div>
+
         </div>
     );
 };
