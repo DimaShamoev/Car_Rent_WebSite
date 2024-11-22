@@ -1,11 +1,11 @@
 .home_landing {
-    height: 70vh;
+    height: 75vh;
     width: 80vw;
     max-width: 100%;
     border-radius: 30px;
     background-color: red;
     margin: auto;
-    background: url("../../../public/home-landing.jpg") center no-repeat;
+    background: url("../../../public/img/home-landing.jpg") center no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -126,7 +126,45 @@
     padding: 5px;
 }
 
+.lifestyle-cars-list {
+    padding: 50px 0;
+}
 
+.car-list-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+}
+
+.car-lists {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lifestyle-car-img {
+    background-color: rgb(232, 232, 232);
+}
+
+.lifestyle-car-img img {
+    transition: 0.2s;
+
+    &:hover {
+        scale: 1.2;
+    }
+}
+
+.lifestyle-car-name {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.2s;
+}
+
+.lifestyle-car-name.hovered {
+    opacity: 1;
+    transform: translate(0);
+}
 
 @media screen and (max-width: 1180px) {
     .rent_car_controller {
