@@ -5,23 +5,28 @@ import AsideMenu from "../../components/AsideMenu";
 import { FaGasPump } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 const Home: React.FunctionComponent = () => {
+
+    // landing car rent options
     const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({
         usedCars: false,
         brands: false,
         models: false,
         price: false,
     });
-
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+    
     const handleOpenMenu = (menu: string) => {
         setOpenMenus((prev) => ({
             ...prev,
             [menu]: !prev[menu],
         }));
     };
+    // ^ landing car rent options
+
+    // Vehicle For LifeStyle
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     const handleMouseOn = (index: number) => {
         setHoveredIndex(index);
@@ -62,7 +67,9 @@ const Home: React.FunctionComponent = () => {
             path: "img/life-style-car-6.png",
         },
     ];
+    // ^ Vehicle For LifeStyle
 
+    // Offers
     const textAnimation = {
         hidden: {
             x: -200,
@@ -132,6 +139,24 @@ const Home: React.FunctionComponent = () => {
         img: string;
         price: number;
     }
+    // ^ Offers
+
+    // Explore Cars Slider
+
+    const [currentSlideIndex, SetCurrentSlideIndex] = React.useState<number>(0);
+
+    const handleNext = () => {
+        SetCurrentSlideIndex((prevIndex) => (
+            (prevIndex + 1) % vehicles.length
+        ))
+    }
+
+    const handlePrev = () => {
+        SetCurrentSlideIndex((prevIndex) => (
+            prevIndex === 0 ? vehicles.length - 1 : prevIndex - 1
+        ))
+    }
+
 
     const vehicles: IVehicles[] = [
         {
@@ -171,6 +196,11 @@ const Home: React.FunctionComponent = () => {
             price: 399
         }
     ];
+
+
+
+    // ^ Explore Cars Slider
+
 
     return (
         <div className="home_page">
@@ -387,13 +417,20 @@ const Home: React.FunctionComponent = () => {
                     </motion.div>
                 </motion.div>
             </motion.div>
+            
 
+            {/* Correct Slider 💀 */}
             <div className="vehicle-slider">
-                <div className="vehicle-title"></div>
-                <div className="vehicle-types"></div>
+                <div className="vehicle-title">Explore All Vehicles</div>
+
                 <div className="vehicle-slider-track">
                     {vehicles.map((vehicle, index) => (
-                        <div className="vehicle-card" key={index}>
+                        <div 
+                            className="vehicle-card" key={index}
+                            style={{
+                                transform: `translateX(-${currentSlideIndex * 600}px)`,
+                            }}
+                        >
                             <div className="vehicle-img-block">
                                 <img src={vehicle.img} alt="" />
                             </div>
@@ -428,7 +465,20 @@ const Home: React.FunctionComponent = () => {
                         </div>
                     ))}
                 </div>
-                <div className="vehicle-slider-btn"></div>
+
+                <div className="vehicle-buttons">
+                    <div className="vehicle-prev-btn vehicle-btn">
+                        <button onClick={handlePrev}>
+                            <GrFormPrevious />
+                        </button>
+                    </div>
+                    <div className="vehicle-prev-btn vehicle-btn">
+                        <button onClick={handleNext}>
+                            <GrFormNext />
+                        </button>
+                    </div>
+                    {currentSlideIndex}
+                </div>
             </div>
         </div>
     );
