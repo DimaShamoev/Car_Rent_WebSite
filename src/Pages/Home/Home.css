@@ -210,7 +210,6 @@
 }
 
 .vehicle-slider {
-    background-color: rgb(127, 180, 255);
     padding: 50px 20px;
 }
 
@@ -218,6 +217,7 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
     padding: 20px;
 }
 
@@ -228,6 +228,7 @@
     width: max-content;
     border-radius: 15px;
     overflow: hidden;
+    transition: 0.2s;
 }
 
 .vehicle-img-block {

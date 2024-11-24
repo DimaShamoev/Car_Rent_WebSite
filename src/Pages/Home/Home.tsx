@@ -157,6 +157,20 @@ const Home: React.FunctionComponent = () => {
         ))
     }
 
+    const vehicleDownToUp = {
+        hidden: {
+            y: 200,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+                type: 'spring'
+            } 
+        }
+    }
 
     const vehicles: IVehicles[] = [
         {
@@ -420,15 +434,23 @@ const Home: React.FunctionComponent = () => {
             
 
             {/* Correct Slider 💀 */}
-            <div className="vehicle-slider">
+            <motion.div
+                className="vehicle-slider"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: .5}}
+            >
                 <div className="vehicle-title">Explore All Vehicles</div>
 
-                <div className="vehicle-slider-track">
+                <motion.div
+                    className="vehicle-slider-track"
+                    variants={vehicleDownToUp}
+                >
                     {vehicles.map((vehicle, index) => (
                         <div 
                             className="vehicle-card" key={index}
                             style={{
-                                transform: `translateX(-${currentSlideIndex * 600}px)`,
+                                transform: `translateX(-${currentSlideIndex * 369}px)`,
                             }}
                         >
                             <div className="vehicle-img-block">
@@ -464,22 +486,27 @@ const Home: React.FunctionComponent = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </motion.div>
 
                 <div className="vehicle-buttons">
                     <div className="vehicle-prev-btn vehicle-btn">
-                        <button onClick={handlePrev}>
+                        <button
+                            onClick={handlePrev}
+                            disabled={currentSlideIndex === 0}
+                        >
                             <GrFormPrevious />
                         </button>
                     </div>
                     <div className="vehicle-prev-btn vehicle-btn">
-                        <button onClick={handleNext}>
+                        <button
+                            onClick={handleNext}
+                            disabled={currentSlideIndex === vehicles.length - 1}
+                        >
                             <GrFormNext />
                         </button>
                     </div>
-                    {currentSlideIndex}
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };
