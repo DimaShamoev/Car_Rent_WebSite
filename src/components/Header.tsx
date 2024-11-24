@@ -9,7 +9,7 @@ const Header: React.FunctionComponent = () => {
         <header className="Header">
             <div className="logo">
                 <Link to="/">
-                    <img src="header-logo.svg" alt="" />
+                    <img src="img/header-logo.svg" alt="" />
                 </Link>
             </div>
             <nav>

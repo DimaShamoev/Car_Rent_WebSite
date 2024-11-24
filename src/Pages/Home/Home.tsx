@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import AsideMenu from "../../components/AsideMenu";
@@ -9,7 +9,6 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Home: React.FunctionComponent = () => {
-
     // landing car rent options
     const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({
         usedCars: false,
@@ -17,7 +16,7 @@ const Home: React.FunctionComponent = () => {
         models: false,
         price: false,
     });
-    
+
     const handleOpenMenu = (menu: string) => {
         setOpenMenus((prev) => ({
             ...prev,
@@ -147,31 +146,29 @@ const Home: React.FunctionComponent = () => {
     const [currentSlideIndex, SetCurrentSlideIndex] = React.useState<number>(0);
 
     const handleNext = () => {
-        SetCurrentSlideIndex((prevIndex) => (
-            (prevIndex + 1) % vehicles.length
-        ))
-    }
+        SetCurrentSlideIndex((prevIndex) => (prevIndex + 1) % vehicles.length);
+    };
 
     const handlePrev = () => {
-        SetCurrentSlideIndex((prevIndex) => (
+        SetCurrentSlideIndex((prevIndex) =>
             prevIndex === 0 ? vehicles.length - 1 : prevIndex - 1
-        ))
-    }
+        );
+    };
 
     const vehicleDownToUp = {
         hidden: {
             y: 200,
-            opacity: 0
+            opacity: 0,
         },
         visible: {
             y: 0,
             opacity: 1,
             transition: {
                 duration: 1,
-                type: 'spring'
-            } 
-        }
-    }
+                type: "spring",
+            },
+        },
+    };
 
     const vehicles: IVehicles[] = [
         {
@@ -190,7 +187,7 @@ const Home: React.FunctionComponent = () => {
             type: "Petrol",
             gear: "Automatic",
             img: "img/slider-car-2.jpg",
-            price: 399
+            price: 399,
         },
         {
             name: "Mercedes-Benz, C Class",
@@ -199,7 +196,7 @@ const Home: React.FunctionComponent = () => {
             type: "Petrol",
             gear: "Automatic",
             img: "img/slider-car-3.jpg",
-            price: 399
+            price: 399,
         },
         {
             name: "Mercedes-Benz, C Class",
@@ -208,14 +205,11 @@ const Home: React.FunctionComponent = () => {
             type: "Petrol",
             gear: "Automatic",
             img: "img/slider-car-4.jpg",
-            price: 399
-        }
+            price: 399,
+        },
     ];
 
-
-
     // ^ Explore Cars Slider
-
 
     return (
         <div className="home_page">
@@ -432,12 +426,12 @@ const Home: React.FunctionComponent = () => {
                     </motion.div>
                 </motion.div>
             </motion.div>
-            
+
             <motion.div
                 className="vehicle-slider"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: .5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
                 <div className="vehicle-title">Explore All Vehicles</div>
 
@@ -446,10 +440,13 @@ const Home: React.FunctionComponent = () => {
                     variants={vehicleDownToUp}
                 >
                     {vehicles.map((vehicle, index) => (
-                        <div 
-                            className="vehicle-card" key={index}
+                        <div
+                            className="vehicle-card"
+                            key={index}
                             style={{
-                                transform: `translateX(-${currentSlideIndex * 369}px)`,
+                                transform: `translateX(-${
+                                    currentSlideIndex * 369
+                                }px)`,
                             }}
                         >
                             <div className="vehicle-img-block">
@@ -465,22 +462,30 @@ const Home: React.FunctionComponent = () => {
                                 <div className="line"></div>
                                 <div className="vehicle-info">
                                     <span>
-                                        <p><FaGasPump /></p>
+                                        <p>
+                                            <FaGasPump />
+                                        </p>
                                         <p>{vehicle.mileage} Miles</p>
                                     </span>
                                     <span>
-                                        <p><IoSpeedometer /></p>
+                                        <p>
+                                            <IoSpeedometer />
+                                        </p>
                                         <p>{vehicle.type}</p>
                                     </span>
                                     <span>
-                                        <p><TbManualGearboxFilled /></p>
+                                        <p>
+                                            <TbManualGearboxFilled />
+                                        </p>
                                         <p>{vehicle.gear}</p>
                                     </span>
                                 </div>
                                 <div className="line"></div>
                                 <div className="vehicle-order">
                                     <span>${vehicle.price}</span>
-                                    <span><a href="#">View Details</a></span>
+                                    <span>
+                                        <a href="#">View Details</a>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -509,15 +514,11 @@ const Home: React.FunctionComponent = () => {
 
             <motion.div
                 className="cars-blog-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
-
-                <motion.div
-                    className="car-blog car-blog-1"
-                    variants={downToUp}
-                >
+                <motion.div className="car-blog car-blog-1" variants={downToUp}>
                     <div className="car-blog-title">
                         <p>Are You Looking</p>
                         <p>For a Car ?</p>
@@ -538,13 +539,10 @@ const Home: React.FunctionComponent = () => {
                     </div>
                 </motion.div>
 
-                <motion.div
-                    className="car-blog car-blog-2"
-                    variants={upToDown}
-                >
+                <motion.div className="car-blog car-blog-2" variants={upToDown}>
                     <div className="car-blog-title">
-                        <p>Are You Looking</p>
-                        <p>For a Car ?</p>
+                        <p>Do You Want to</p>
+                        <p>Sell a Car ?</p>
                     </div>
                     <div className="car-blog-txt">
                         <p>We are committed to providing our customers with</p>
@@ -561,22 +559,18 @@ const Home: React.FunctionComponent = () => {
                         </div>
                     </div>
                 </motion.div>
-
             </motion.div>
 
             <motion.div
                 className="car-banner-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
-                <motion.div
-                    className="car-banner-img-side"
-                    variants={downToUp}
-                >
+                <motion.div className="car-banner-img-side" variants={downToUp}>
                     <img src="img/banner-car1.jpg" alt="" />
                 </motion.div>
-                
+
                 <motion.div
                     className="car-banner-txt-side-wrapper"
                     variants={downToUp}
@@ -588,8 +582,9 @@ const Home: React.FunctionComponent = () => {
                         </div>
 
                         <div className="car-banner-txt">
-                            Choose from thousands of vehicles from multiple brands and buy 
-                            online with Click & Drive, or visit us at one of our dealerships today.
+                            Choose from thousands of vehicles from multiple
+                            brands and buy online with Click & Drive, or visit
+                            us at one of our dealerships today.
                         </div>
 
                         <div className="car-banner-btn">
@@ -597,12 +592,48 @@ const Home: React.FunctionComponent = () => {
                                 Find Out More <MdOutlineArrowOutward />
                             </button>
                         </div>
-
                     </div>
                 </motion.div>
-
             </motion.div>
 
+            <motion.div
+                className="boxcar-facts-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.7}}
+            >
+                <motion.div
+                    className="boxcar-fact boxcar-fact-1"
+                    variants={upToDown}
+                >
+                    <p>834M</p>
+                    <span>CARS FOR SALE</span>
+                </motion.div>
+
+                <motion.div
+                    className="boxcar-fact boxcar-fact-1"
+                    variants={downToUp}
+                >
+                    <p>732M</p>
+                    <span>DEALER REVIEWS</span>
+                </motion.div>
+
+                <motion.div
+                    className="boxcar-fact boxcar-fact-1"
+                    variants={upToDown}
+                >
+                    <p>90M</p>
+                    <span>VISITORS PER DAY</span>
+                </motion.div>
+
+                <motion.div
+                    className="boxcar-fact boxcar-fact-1"
+                    variants={downToUp}
+                >
+                    <p>236M</p>
+                    <span>VERIFIED DEALERS</span>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };
