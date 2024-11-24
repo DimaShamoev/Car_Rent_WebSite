@@ -6,6 +6,7 @@ import { FaGasPump } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Home: React.FunctionComponent = () => {
 
@@ -432,8 +433,6 @@ const Home: React.FunctionComponent = () => {
                 </motion.div>
             </motion.div>
             
-
-            {/* Correct Slider 💀 */}
             <motion.div
                 className="vehicle-slider"
                 initial='hidden'
@@ -507,6 +506,103 @@ const Home: React.FunctionComponent = () => {
                     </div>
                 </div>
             </motion.div>
+
+            <motion.div
+                className="cars-blog-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+
+                <motion.div
+                    className="car-blog car-blog-1"
+                    variants={downToUp}
+                >
+                    <div className="car-blog-title">
+                        <p>Are You Looking</p>
+                        <p>For a Car ?</p>
+                    </div>
+                    <div className="car-blog-txt">
+                        <p>We are committed to providing our customers with</p>
+                        <p>exceptional service.</p>
+                    </div>
+                    <div className="car-blog-bottom">
+                        <div className="car-blog-btn">
+                            <button>
+                                Get Started <MdOutlineArrowOutward />
+                            </button>
+                        </div>
+                        <div className="car-blog-icon">
+                            <img src="img/car-blog-1.svg" alt="" />
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    className="car-blog car-blog-2"
+                    variants={upToDown}
+                >
+                    <div className="car-blog-title">
+                        <p>Are You Looking</p>
+                        <p>For a Car ?</p>
+                    </div>
+                    <div className="car-blog-txt">
+                        <p>We are committed to providing our customers with</p>
+                        <p>exceptional service.</p>
+                    </div>
+                    <div className="car-blog-bottom">
+                        <div className="car-blog-btn">
+                            <button>
+                                Get Started <MdOutlineArrowOutward />
+                            </button>
+                        </div>
+                        <div className="car-blog-icon">
+                            <img src="img/car-blog-2.svg" alt="" />
+                        </div>
+                    </div>
+                </motion.div>
+
+            </motion.div>
+
+            <motion.div
+                className="car-banner-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.div
+                    className="car-banner-img-side"
+                    variants={downToUp}
+                >
+                    <img src="img/banner-car1.jpg" alt="" />
+                </motion.div>
+                
+                <motion.div
+                    className="car-banner-txt-side-wrapper"
+                    variants={downToUp}
+                >
+                    <div className="car-banner-txt-side">
+                        <div className="car-banner-title">
+                            <p>Online, in-person,</p>
+                            <p>everywhere</p>
+                        </div>
+
+                        <div className="car-banner-txt">
+                            Choose from thousands of vehicles from multiple brands and buy 
+                            online with Click & Drive, or visit us at one of our dealerships today.
+                        </div>
+
+                        <div className="car-banner-btn">
+                            <button>
+                                Find Out More <MdOutlineArrowOutward />
+                            </button>
+                        </div>
+
+                    </div>
+                </motion.div>
+
+            </motion.div>
+
         </div>
     );
 };
