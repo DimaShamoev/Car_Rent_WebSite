@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import AsideMenu from "../../components/AsideMenu";
-import { FaGasPump } from "react-icons/fa";
+import { FaCheckCircle, FaGasPump } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { BiSolidStar } from "react-icons/bi";
 
 const Home: React.FunctionComponent = () => {
     // landing car rent options
@@ -598,9 +599,9 @@ const Home: React.FunctionComponent = () => {
 
             <motion.div
                 className="boxcar-facts-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.7}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.7 }}
             >
                 <motion.div
                     className="boxcar-fact boxcar-fact-1"
@@ -634,6 +635,55 @@ const Home: React.FunctionComponent = () => {
                     <span>VERIFIED DEALERS</span>
                 </motion.div>
             </motion.div>
+
+            <div className="reports-block">
+                <div className="reports-left-side">
+                    <div className="reports-left-side-title">
+                        <p>What our</p>
+                        <p>customers say</p>
+                    </div>
+                    <div className="reports-left-side-rate">
+                        <div className="reports-rate-status">Great</div>
+                        <div className="reports-rate">
+                            <BiSolidStar className="reports-rate-star" />
+                            <BiSolidStar className="reports-rate-star" />
+                            <BiSolidStar className="reports-rate-star" />
+                            <BiSolidStar className="reports-rate-star" />
+                            <BiSolidStar className="reports-rate-star" />
+                        </div>
+                        <div className="reports-count">
+                            <span>Based on 5,801 reviews</span>
+                        </div>
+                        <div className="rates-icon">
+                            <BiSolidStar className="rate-icon-star" />
+                            <span>Trustpilot</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="reports-right-side">
+                    <div className="reports-right-side-top">
+                        <div className="right-side-rate">
+                            <span>
+                                <BiSolidStar className="right-side-star" />
+                                <BiSolidStar className="right-side-star" />
+                                <BiSolidStar className="right-side-star" />
+                                <BiSolidStar className="right-side-star" />
+                                <BiSolidStar className="right-side-star" />
+                            </span>
+                            <span>
+                                <FaCheckCircle /> Verified
+                            </span>
+                        </div>
+                        <div className="right-side-designer-info">
+                            <p>Ali Tufas</p>
+                            <p>Designer</p>
+                        </div>
+                    </div>
+                    <div className="reports-right-side-bottom">
+                        {/* Add Slider "Again? 💀" */}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

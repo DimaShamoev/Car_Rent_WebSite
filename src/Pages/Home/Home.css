@@ -455,7 +455,9 @@
     justify-content: space-evenly;
     padding: 40px 0;
     border-bottom: solid 2px #E1E1E1;
+    margin-bottom: 80px;
     overflow: hidden;
+
 }
 
 .boxcar-fact {
@@ -471,6 +473,113 @@
 
 .boxcar-fact span {
     font-size: 15px;
+}
+
+.reports-block {
+    background-color: #F9FBFC;
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.reports-left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.reports-left-side-title {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 600;
+    text-shadow: 0 0 1px black;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.reports-left-side-rate {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reports-rate-status {
+    font-size: 20px;
+    text-shadow: 0 0 1px;
+}
+
+.reports-rate {
+    display: flex;
+    gap: 3px;
+}
+
+.reports-rate-star {
+    background-color: #00B67A;
+    color: white;
+    font-size: 35px;
+    padding: 3px;
+}
+
+.rates-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rate-icon-star {
+    color: #00B67A;
+    font-size: 30px;
+}
+
+.rates-icon span {
+    font-size: 25px;
+    text-shadow: 0 0 1px black;
+}
+
+.reports-right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.reports-right-side-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-side-rate {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right-side-rate span:first-child{
+    color: white;
+    display: flex;
+    gap: 1px;
+}
+
+.right-side-star {
+    background-color: #00B67A;
+    padding: 2px;
+    font-size: 20px;
+}
+
+.right-side-rate span:last-child{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: .5;
+}
+
+.right-side-designer-info p:first-child {
+    font-size: 20px;
+}
+
+.right-side-designer-info p:last-child {
+    font-size: 14px;
+    opacity: 0.9;
 }
 
 @media screen and (max-width: 1180px) {
