@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import AsideMenu from "../../components/AsideMenu";
-import { FaCheckCircle, FaGasPump } from "react-icons/fa";
+import { FaCheckCircle, FaGasPump, FaRegEnvelope } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { BiSolidStar } from "react-icons/bi";
+import { GiSmartphone } from "react-icons/gi";
 
 const Home: React.FunctionComponent = () => {
     // landing car rent options
@@ -61,7 +62,7 @@ const Home: React.FunctionComponent = () => {
         },
         {
             name: "HRV",
-            path: "/public/img/life-style-car-5.png",
+            path: "img/life-style-car-5.png",
         },
         {
             name: "Minivan",
@@ -842,9 +843,9 @@ const Home: React.FunctionComponent = () => {
 
             <motion.div
                 className="premium-brands-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
                 <motion.div
                     className="premium-brand-block-head"
@@ -860,10 +861,7 @@ const Home: React.FunctionComponent = () => {
                     </div>
                 </motion.div>
 
-                <motion.div
-                    className="premium-brands-list"
-                    variants={downToUp}
-                >
+                <motion.div className="premium-brands-list" variants={downToUp}>
                     <div className="premium-brand-block">
                         <div className="premium-brand-img">
                             <img src="img/brand-car-1.png" alt="" />
@@ -904,6 +902,54 @@ const Home: React.FunctionComponent = () => {
                             <img src="img/brand-car-6.png" alt="" />
                         </div>
                         <div className="premium-brand-name">VOLKSWAGEN</div>
+                    </div>
+                </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="contact-us-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.div
+                    className="contact-us-img-side"
+                    variants={textAnimation}
+                >
+                    <img src="img/contact-us-section1.jpg" alt="" />
+                </motion.div>
+
+                <motion.div
+                    className="contact-us-text-side"
+                    variants={rightToLeft}
+                >
+                    <div className="contact-us-text-side-wrapper">
+                        <div className="contact-us-block-info">
+                            <div className="contact-us-title">
+                                Have more questions? Don't hesitate to reach us
+                            </div>
+                            <div className="contact-us-address">
+                                <p>329 Queensberry Street, North</p>
+                                <p>Melbourne VIC3051, Australia.</p>
+                            </div>
+                            <div className="contact-mail-phone">
+                                <div className="phone-btn">
+                                    <button>
+                                        <GiSmartphone className="contact-icon" /> <span>+987 654 321 000</span>
+                                    </button>
+                                </div>
+                                <div className="mail-btn">
+                                    <button>
+                                        <FaRegEnvelope className="contact-icon" /> <span>contact.main@mail.com</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="contact-us-btn">
+                            <a href="/contact">
+                                Contact Us <MdOutlineArrowOutward />
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
             </motion.div>
