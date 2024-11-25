@@ -212,6 +212,40 @@ const Home: React.FunctionComponent = () => {
 
     // ^ Explore Cars Slider
 
+    // Reports Slider
+
+    interface IReportsSlides {
+        id: number;
+        text: string;
+        img: string;
+    }
+
+    const reportsSlides: IReportsSlides[] = [
+        {
+            id: 1,
+            text: "I'd suggest Mackle Motors Nissan Glasgow South to a friend because I had great service from my salesman Patrick and all of the team.",
+            img: "img/report-1.jpg",
+        },
+        {
+            id: 2,
+            text: "I'd recommend Mackle Motors Nissan Glasgow South to anyone because the service from Patrick and the team was excellent!",
+            img: "img/report-2.jpg",
+        },
+        {
+            id: 3,
+            text: "Great service from Patrick and the entire team at Mackle Motors Nissan Glasgow South—I'd definitely suggest them to a friend!",
+            img: "img/report-3.jpg",
+        },
+    ];
+
+    const [reportSlide, setReportSlide] = useState<number>(0);
+
+    const handleReportSlide = (index: number) => {
+        setReportSlide(index);
+    };
+
+    // ^Reports Slider
+
     return (
         <div className="home_page">
             <AsideMenu />
@@ -636,8 +670,16 @@ const Home: React.FunctionComponent = () => {
                 </motion.div>
             </motion.div>
 
-            <div className="reports-block">
-                <div className="reports-left-side">
+            <motion.div
+                className="reports-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.div
+                    className="reports-left-side"
+                    variants={textAnimation}
+                >
                     <div className="reports-left-side-title">
                         <p>What our</p>
                         <p>customers say</p>
@@ -659,8 +701,12 @@ const Home: React.FunctionComponent = () => {
                             <span>Trustpilot</span>
                         </div>
                     </div>
-                </div>
-                <div className="reports-right-side">
+                </motion.div>
+
+                <motion.div
+                    className="reports-right-side"
+                    variants={rightToLeft}
+                >
                     <div className="reports-right-side-top">
                         <div className="right-side-rate">
                             <span>
@@ -680,10 +726,37 @@ const Home: React.FunctionComponent = () => {
                         </div>
                     </div>
                     <div className="reports-right-side-bottom">
-                        {/* Add Slider "Again? 💀" */}
+
+                        <div className="reports-slider-container">
+                            <div className="reports-slider-content">
+                                {reportsSlides.map((slide, index) => (
+                                    <div
+                                        key={slide.id}
+                                        className={`slide-text ${ reportSlide === index ? "visible" : "hidden"}`}
+                                    >
+                                        {slide.text}
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="reports-slider-btns">
+                                {reportsSlides.map((slide, index) => (
+                                    <img
+                                        key={slide.id}
+                                        src={slide.img}
+                                        alt={`Profile ${slide.id}`}
+                                        className={`reports-slider-profile-pic ${
+                                            reportSlide === index ? "active" : ""
+                                        }`}
+                                        onClick={() => handleReportSlide(index)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };
