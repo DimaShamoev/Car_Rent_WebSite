@@ -764,18 +764,14 @@ const Home: React.FunctionComponent = () => {
 
             <motion.div
                 className="latest-blogs-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
-                <motion.div
-                    className="blogs-block-title"
-                    variants={upToDown}
-                >
+                <motion.div className="blogs-block-title" variants={upToDown}>
                     Latest Blog Posts
                 </motion.div>
                 <div className="blogs-list">
-
                     <motion.div
                         className="blog-block blog-block-1"
                         variants={downToUp}
@@ -788,7 +784,9 @@ const Home: React.FunctionComponent = () => {
 
                             <div className="block-block-dot"></div>
 
-                            <div className="blog-block-date">April 20, 2023</div>
+                            <div className="blog-block-date">
+                                April 20, 2023
+                            </div>
                         </div>
                         <div className="blog-block-txt">
                             This Long-Awaited Technology May Finally Change the
@@ -840,6 +838,74 @@ const Home: React.FunctionComponent = () => {
                         </div>
                     </motion.div>
                 </div>
+            </motion.div>
+
+            <motion.div
+                className="premium-brands-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.div
+                    className="premium-brand-block-head"
+                    variants={upToDown}
+                >
+                    <div className="premium-brand-title">
+                        Explore Our Premium Brands
+                    </div>
+                    <div className="brands-explore-btn">
+                        <a href="/product">
+                            Show All Brands <MdOutlineArrowOutward />
+                        </a>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    className="premium-brands-list"
+                    variants={downToUp}
+                >
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-1.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">AUDI</div>
+                    </div>
+
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-2.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">BWM</div>
+                    </div>
+
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-3.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">FORD</div>
+                    </div>
+
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-4.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">Mercedes-Benz</div>
+                    </div>
+
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-5.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">PEUGEOT</div>
+                    </div>
+
+                    <div className="premium-brand-block">
+                        <div className="premium-brand-img">
+                            <img src="img/brand-car-6.png" alt="" />
+                        </div>
+                        <div className="premium-brand-name">VOLKSWAGEN</div>
+                    </div>
+                </motion.div>
             </motion.div>
         </div>
     );

@@ -705,6 +705,57 @@
     text-shadow: 0 0 1px black;
 }
 
+.premium-brands-block {
+    overflow: hidden;
+    padding: 0px 50px 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.premium-brand-block-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.premium-brand-title {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.brands-explore-btn a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.premium-brands-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.premium-brand-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border: solid 2px rgba(225, 225, 225, 0.5);
+    height: 180px;
+    width: 210px;
+    padding: 30px;
+    border-radius: 15px;
+    transition: .3s;
+
+    &:hover {
+        border-color: #405FF2;
+    }
+}
+
 @media screen and (max-width: 1180px) {
     .rent_car_controller {
         margin: 30px auto;
