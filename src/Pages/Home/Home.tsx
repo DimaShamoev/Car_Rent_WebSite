@@ -672,9 +672,9 @@ const Home: React.FunctionComponent = () => {
 
             <motion.div
                 className="reports-block"
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
             >
                 <motion.div
                     className="reports-left-side"
@@ -726,13 +726,16 @@ const Home: React.FunctionComponent = () => {
                         </div>
                     </div>
                     <div className="reports-right-side-bottom">
-
                         <div className="reports-slider-container">
                             <div className="reports-slider-content">
                                 {reportsSlides.map((slide, index) => (
                                     <div
                                         key={slide.id}
-                                        className={`slide-text ${ reportSlide === index ? "visible" : "hidden"}`}
+                                        className={`slide-text ${
+                                            reportSlide === index
+                                                ? "visible"
+                                                : "hidden"
+                                        }`}
                                     >
                                         {slide.text}
                                     </div>
@@ -746,16 +749,97 @@ const Home: React.FunctionComponent = () => {
                                         src={slide.img}
                                         alt={`Profile ${slide.id}`}
                                         className={`reports-slider-profile-pic ${
-                                            reportSlide === index ? "active" : ""
+                                            reportSlide === index
+                                                ? "active"
+                                                : ""
                                         }`}
                                         onClick={() => handleReportSlide(index)}
                                     />
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="latest-blogs-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.div
+                    className="blogs-block-title"
+                    variants={upToDown}
+                >
+                    Latest Blog Posts
+                </motion.div>
+                <div className="blogs-list">
+
+                    <motion.div
+                        className="blog-block blog-block-1"
+                        variants={downToUp}
+                    >
+                        <div className="blog-block-img">
+                            <img src="img/blog-car-1.jpg" alt="" />
+                        </div>
+                        <div className="blog-block-info">
+                            <div className="blog-block-author">Ali Tufas</div>
+
+                            <div className="block-block-dot"></div>
+
+                            <div className="blog-block-date">April 20, 2023</div>
+                        </div>
+                        <div className="blog-block-txt">
+                            This Long-Awaited Technology May Finally Change the
+                            World
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        className="blog-block blog-block-2"
+                        variants={downToUp}
+                    >
+                        <div className="blog-block-img">
+                            <img src="img/blog-car-2.jpg" alt="" />
+                        </div>
+                        <div className="blog-block-info">
+                            <div className="blog-block-author">Ali Tufas</div>
+
+                            <div className="block-block-dot"></div>
+
+                            <div className="blog-block-date">
+                                April 20, 2023
+                            </div>
+                        </div>
+                        <div className="blog-block-txt">
+                            This Long-Awaited Technology May Finally Change the
+                            World
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        className="blog-block blog-block-3"
+                        variants={downToUp}
+                    >
+                        <div className="blog-block-img">
+                            <img src="img/blog-car-3.jpg" alt="" />
+                        </div>
+                        <div className="blog-block-info">
+                            <div className="blog-block-author">Ali Tufas</div>
+
+                            <div className="block-block-dot"></div>
+
+                            <div className="blog-block-date">
+                                April 20, 2023
+                            </div>
+                        </div>
+                        <div className="blog-block-txt">
+                            This Long-Awaited Technology May Finally Change the
+                            World
+                        </div>
+                    </motion.div>
+                </div>
             </motion.div>
         </div>
     );
