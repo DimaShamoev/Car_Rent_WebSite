@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
-import AsideMenu from "../../components/AsideMenu";
 import { FaCheckCircle, FaGasPump, FaRegEnvelope } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
@@ -249,8 +248,6 @@ const Home: React.FunctionComponent = () => {
 
     return (
         <div className="home_page">
-            <AsideMenu />
-
             <div className="home_landing">
                 <div className="home_landing-txt-1">
                     Find Cars For Rent Near You

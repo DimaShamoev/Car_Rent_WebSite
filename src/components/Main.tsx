@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import React, { Suspense } from "react";
 import Product from "../Pages/Product/Product";
+import PageLoader from "./PageLoader";
 
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 
 const Main: React.FunctionComponent = () => {
     return (
         <main className="main">
-            <Suspense fallback={<div>Add Loading...</div>}>
+            <Suspense fallback={<PageLoader />}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/product" element={<Product />} />
