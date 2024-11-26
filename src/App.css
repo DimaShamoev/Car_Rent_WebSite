@@ -100,13 +100,62 @@ body {
   bottom: 0;
   background-color: rgb(255, 255, 255);
   width: 0;
-  transition: 0.3s ease-in-out;
+  transition: .5s ease-in-out;
   overflow: hidden;
   white-space: nowrap;
+  padding: 0;
 }
 
 .Aside-menu.active {
-  width: 200px;
+  width: 250px;
+  padding: 20px;
+}
+
+.aside-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside-title {
+    font-size: 20px;
+}
+
+.aside-exit-btn {
+    font-size: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.Aside-menu hr {
+    margin: 20px 0;
+    border: solid 1px #e1e1e1;
+    
+}
+
+.aside-menu-list ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aside-menu-list ul li a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.2s;
+    white-space: wrap;
+}
+
+.aside-menu-list ul li a.active {
+    background-color: #E9F2FF;
+    color: #405FF2;
 }
 
 .overlay {
