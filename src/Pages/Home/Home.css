@@ -139,7 +139,8 @@
 
 .car-lists {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    row-gap: 20px;
 }
 
 .lifestyle-car-img {
@@ -211,6 +212,7 @@
 
 .vehicle-slider {
     padding: 50px 20px;
+    overflow: hidden;
 }
 
 .vehicle-slider-track {
@@ -219,6 +221,8 @@
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     padding: 20px;
+    width: 1500px;
+
 }
 
 .vehicle-card {
@@ -337,7 +341,6 @@
     grid-template-columns: repeat(2, auto);
     padding: 50px;
     gap: 40px;
-    overflow: hidden;
 }
 
 .car-blog {
@@ -839,6 +842,13 @@
     }
 }
 
+@media screen and (max-width: 1325px) {
+    .car-lists {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
 @media screen and (max-width: 1180px) {
     .rent_car_controller {
         margin: 30px auto;
@@ -876,5 +886,42 @@
 
     .search-btn:hover {
         background-color: transparent;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .offers-block {
+        flex-direction: column;
+    }
+
+    .offers-title {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .offers {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 705px) {
+    .car-lists {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .car-lists {
+        grid-template-columns: repeat(1, auto);
+    }
+    
+    .offers {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .cars-blog-block {
+        grid-template-columns: repeat(1, auto) !important;
     }
 }
