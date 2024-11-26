@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Overlay from "./components/Overlay";
+import Footer from "./components/Footer";
 
 const App: React.FunctionComponent = () => {
     return (
@@ -12,6 +13,7 @@ const App: React.FunctionComponent = () => {
                     <Header />
                     <Overlay />
                     <Main />
+                    <Footer />
                 </div>
             </div>
         </BrowserRouter>

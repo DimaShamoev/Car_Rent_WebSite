@@ -124,6 +124,128 @@ body {
   bottom: 0;
 }
 
+.footer-top {
+    border-bottom: 2px solid #ececec;
+}
+
+.footer-lists {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    padding: 20px 50px 50px 50px;
+}
+
+.footer-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-list ul li:first-child {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-list ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: 0.3s;
+
+    &:hover {
+        color: #405FF2;
+    }
+}
+
+.footer-list ul li a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: #405FF2;
+    bottom: -4px;
+    left: 0;
+    right: 100%;
+    transition: 0.3s;
+}
+
+.footer-list ul li a:hover::after {
+    right: 0;
+}
+
+.footer-list-5 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.footer-list-5 ul li:last-child {
+    line-height: 2;
+}
+
+.footer-contact-btn  {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+.social-media span {
+    background-color: transparent;
+    padding: 7px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #efeeee;
+    }
+}
+
+.footer-bottom {
+    padding: 30px 50px;
+    background-color: #FBFBFB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: default;
+}
+
+.footer-copy-rights {
+    font-size: 16px;
+    transition: 0.2s;
+
+    &:hover {
+        color: rgb(100, 100, 100);
+    }
+}
+
+.footer-terms-privacy {
+    font-size: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-terms-privacy a {
+    text-decoration: none;
+    color: black;
+}
+
 @media screen and (max-width: 1030px) {
   .Header ul {
     width: 450px;
