@@ -385,7 +385,7 @@ const Home: React.FunctionComponent = () => {
                 className="offers-block"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.55 }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <motion.div className="offers-title" variants={textAnimation}>
                     <p>We're BIG on what</p>
@@ -395,7 +395,7 @@ const Home: React.FunctionComponent = () => {
                     className="offers"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.6 }}
+                    viewport={{ once: true, amount: 0.35 }}
                 >
                     <motion.div
                         className="offer-card offer-1"
@@ -552,7 +552,7 @@ const Home: React.FunctionComponent = () => {
                 className="cars-blog-block"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <motion.div className="car-blog car-blog-1" variants={downToUp}>
                     <div className="car-blog-title">
@@ -675,7 +675,7 @@ const Home: React.FunctionComponent = () => {
                 className="reports-block"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
             >
                 <motion.div
                     className="reports-left-side"
@@ -767,7 +767,7 @@ const Home: React.FunctionComponent = () => {
                 className="latest-blogs-block"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <motion.div className="blogs-block-title" variants={upToDown}>
                     Latest Blog Posts
@@ -845,7 +845,7 @@ const Home: React.FunctionComponent = () => {
                 className="premium-brands-block"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
             >
                 <motion.div
                     className="premium-brand-block-head"
@@ -910,7 +910,7 @@ const Home: React.FunctionComponent = () => {
                 className="contact-us-block"
                 initial='hidden'
                 whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                viewport={{once: true, amount: 0.3}}
             >
                 <motion.div
                     className="contact-us-img-side"
