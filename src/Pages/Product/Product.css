@@ -388,11 +388,12 @@
 
     .product-vehicle-card {
         width: 100%;
+        max-width: 300px;
     
     }
     
     .vehicle-card-img {
-        height: auto;
+        height: 180px;
         width: 100%;
     }
 }

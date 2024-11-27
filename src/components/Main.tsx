@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import React, { Suspense } from "react";
 import Product from "../Pages/Product/Product";
 import PageLoader from "./PageLoader";
+import Shop from "../Pages/Shop";
 
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 
@@ -12,7 +13,7 @@ const Main: React.FunctionComponent = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/product" element={<Product />} />
-                    <Route path="/shop" element={<div>Add Shop Page</div>} />
+                    <Route path="/shop" element={<Shop />} />
                     <Route
                         path="/pricing"
                         element={<div>Add Pricing Page</div>}

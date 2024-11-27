@@ -27,6 +27,5 @@ export default App;
 
 // ToDos
 // 1 Add Pages
-// 2 Add Load
 
 // Link https://creativelayers.net/themes/boxcar-html/index-10.html#
