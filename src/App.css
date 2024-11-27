@@ -346,6 +346,13 @@ body {
   }
 }
 
+@media screen and (max-width: 900px) {
+    .footer-lists {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+}
+
 @media screen and (max-width: 780px) {
   .Header ul,
   .Header .sign-in {
@@ -355,6 +362,14 @@ body {
   .expand-menu-block {
     display: flex;
   }
+}
+
+@media screen and (max-width: 705px) {
+    .footer-bottom {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
 }
 
 @media screen and (max-width: 600px) {  
@@ -369,4 +384,16 @@ body {
   .expand-menu-block {
     display: flex;
   }
+}
+
+@media screen and (max-width: 420px) {
+
+    .footer-lists {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-terms-privacy {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

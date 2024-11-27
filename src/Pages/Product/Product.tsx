@@ -204,7 +204,7 @@ const Product: React.FunctionComponent = () => {
                                 </div>
                             </div>
                             <div className="price-range">
-                                <input type="range" />
+                                <input type="range"/>
                             </div>
                         </div>
 

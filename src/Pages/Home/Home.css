@@ -935,6 +935,7 @@
 }
 
 @media screen and (max-width: 900px) {
+
     .offers-block {
         flex-direction: column;
     }
@@ -960,10 +961,6 @@
         width: 100%;
     }
 
-    .footer-lists {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
-    }
 }
 
 @media screen and (max-width: 800px) {
@@ -991,11 +988,7 @@
         grid-template-columns: repeat(2, auto);
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        align-items: start;
-        gap: 10px;
-    }
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -1048,14 +1041,5 @@
 @media screen and (max-width: 420px) {
     .latest-blogs-block {
         padding: 100px 20px;
-    }
-
-    .footer-lists {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .footer-terms-privacy {
-        flex-direction: column;
-        gap: 10px;
     }
 }
