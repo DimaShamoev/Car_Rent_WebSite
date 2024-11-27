@@ -11,7 +11,7 @@
 }
 
 .product-page-filter {
-    padding: 10px;
+    padding: 20px;
 }
 
 .product-page-filter-wrapper {
@@ -158,5 +158,119 @@
 }
 
 .product-page-cars {
-    background-color: blueviolet;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-page-cars-sort {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.product-count {
+    font-size: 17px;
+}
+
+.product-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c6c6c;
+    font-size: 17px;
+}
+
+.product-sort a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+    color: black;
+    font-size: 17px;
+}
+
+.product-cars-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    row-gap: 30px;
+    justify-content: space-between;
+}
+
+.product-vehicle-card {
+    /* border: solid 1px black; */
+    border-radius: 20px;
+
+}
+
+.vehicle-card-img {
+    height: 240px;
+    width: 360px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.vehicle-card-img img {
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+}
+
+.vehicle-card-info {
+    border: solid 2px #d8d8d8;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vehicle-card-info hr {
+    border: none;
+    height: 1px;
+    background-color: #d8d8d8;
+}
+
+.vehicle-txt p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vehicle-txt p:last-child {
+    line-height: 2;
+}
+
+.vehicle-card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vehicle-card-details p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vehicle-product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vehicle-product-price p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vehicle-product-price a {
+    color: #405FF2;
+    text-decoration: none;
+    text-shadow: 0 0 1px #405FF2;
 }

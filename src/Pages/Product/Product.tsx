@@ -1,6 +1,9 @@
 import React from "react";
 import "./Product.css"
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaGasPump } from "react-icons/fa";
+import { IoSpeedometer } from "react-icons/io5";
+import { TbManualGearboxFilled } from "react-icons/tb";
 
 const Product: React.FunctionComponent = () => {
     interface IProductVehicles {
@@ -25,7 +28,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-01.jpg",
         },
         {
             id: 2,
@@ -36,7 +39,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-02.jpg",
         },
         {
             id: 3,
@@ -47,7 +50,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-03.jpg",
         },
         {
             id: 4,
@@ -58,7 +61,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-04.jpg",
         },
         {
             id: 5,
@@ -69,7 +72,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-05.jpg",
         },
         {
             id: 6,
@@ -80,7 +83,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-06.jpg",
         },
         {
             id: 7,
@@ -91,7 +94,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-07.jpg",
         },
         {
             id: 8,
@@ -102,7 +105,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-08.jpg",
         },
         {
             id: 9,
@@ -113,7 +116,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-09.jpg",
         },
         {
             id: 10,
@@ -124,7 +127,7 @@ const Product: React.FunctionComponent = () => {
             gasType: "Petrol",
             gear: "Automatic",
             price: 399,
-            img: "",
+            img: "img/product-car-10.jpg",
         },
     ];
 
@@ -232,6 +235,55 @@ const Product: React.FunctionComponent = () => {
                 </div>
 
                 <div className="product-page-cars">
+                    <div className="product-page-cars-sort">
+                        <div className="product-count">
+                            Showing 1 to 16 of 1559 vehicles
+                        </div>
+                        <div className="product-sort">
+                            sort <a href="#">Any Makes <MdKeyboardArrowDown /></a>
+                        </div>
+                    </div>
+
+                    <div className="product-cars-list">
+
+                        {productVehicles.map((vehicle) => (
+                            <div className="product-vehicle-card" key={vehicle.id}>
+                                <div className="vehicle-card-img">
+                                    <img src={vehicle.img} alt="" />
+                                </div>
+                                <div className="vehicle-card-info">
+                                    <div className="vehicle-txt">
+                                        <p>{vehicle.name}</p>
+                                        <p>{vehicle.title}</p>
+                                    </div>
+
+                                    <hr />
+
+                                    <div className="vehicle-card-details">
+                                        <p>
+                                            <span><FaGasPump /></span>
+                                            <span>{vehicle.millage} Miles</span>
+                                        </p>
+                                        <p>
+                                            <span><IoSpeedometer /></span>
+                                            <span>{vehicle.gasType}</span>
+                                        </p>
+                                        <p>
+                                            <span><TbManualGearboxFilled /></span>
+                                            <span>{vehicle.gear}</span>
+                                        </p>
+                                    </div>
+
+                                    <hr />
+                                    <div className="vehicle-product-price">
+                                        <p>${vehicle.price}</p>
+                                        <p><a href="#">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+
+                    </div>
 
                 </div>
             </div>
