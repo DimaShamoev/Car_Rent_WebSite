@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import React, { Suspense } from "react";
 import Product from "../Pages/Product/Product";
 import PageLoader from "./PageLoader";
-import Shop from "../Pages/Shop";
+import Shop from "../Pages/Shop/Shop";
 
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 
