@@ -210,3 +210,47 @@
 .but-btn span {
     font-size: 25px;
 }
+
+@media screen and (max-width: 1350px) {
+    .shop-item {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .shop-item {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .shop-min-max-price-block {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .shop-page-product-bottom {
+        grid-template-columns: repeat(2, auto);
+        gap: 20px;
+    }
+
+    .shop-item {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .shop-page-filter-product {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .shop-page-product-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+}
