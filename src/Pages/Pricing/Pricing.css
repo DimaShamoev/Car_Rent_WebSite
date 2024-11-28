@@ -120,3 +120,21 @@
     background-color: white;
     color: #405FF2;
 }
+
+@media screen and (max-width: 1050px) {
+    .pricing-offers {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pricing-offers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+    }
+}

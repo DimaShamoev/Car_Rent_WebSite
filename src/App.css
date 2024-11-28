@@ -153,6 +153,7 @@ body {
 
 .Aside-menu.active {
     width: 320px;
+    max-width: 100%;
     padding: 20px;
 }
 
