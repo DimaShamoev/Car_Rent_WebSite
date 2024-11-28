@@ -1,0 +1,122 @@
+.pricing-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pricing-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    text-shadow: 0 0 1px black;
+}
+
+.pricing-offers {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    gap: 20px;
+}
+
+
+/* ------------------------------------ */
+
+.offer-block {
+    border: solid 1px #dadada;
+    padding: 25px 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 330px;
+    max-width: 100%;
+    transition: 0.2s;
+}
+
+.offer-block.card-active {
+    background-color: #405FF2;
+    color: white;
+}
+
+.price-block {
+    display: flex;
+    align-items: first baseline;
+    gap: 1px;
+}
+
+.price-block p {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.price-block span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.offer-type {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.offer-desc {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.offer-advantages-list {
+    margin: 20px 0;
+}
+
+.offer-advantages-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.offer-advantages-list ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.offer-advantages-list ul li span {
+    background-color: #e9f2ff;
+    color: #405FF2;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-buy-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+
+
+.offer-buy-btn button {
+    border: solid 1px #405FF2;
+    background-color: transparent;
+    width: 100%;
+    padding: 15px 0;
+    color: #405FF2;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.offer-buy-btn.hovered {
+    background-color: white;
+    color: #405FF2;
+}
