@@ -1,5 +1,8 @@
 import React from "react";
 import "./Shop.css";
+import { IoIosArrowDown } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
 
 const Shop: React.FunctionComponent = () => {
     interface IShopItems {
@@ -14,7 +17,7 @@ const Shop: React.FunctionComponent = () => {
         {
             id: 1,
             img: "img/shop-item-1.png",
-            stars: 5,
+            stars: 3,
             desc: "12v Compact Battery Jump Starter",
             price: 399,
         },
@@ -139,10 +142,40 @@ const Shop: React.FunctionComponent = () => {
                     <div className="shop-page-product-block-wrapper">
 
                         <div className="shop-page-product-top">
-                            
+                            <div className="shop-product-count">
+                                Showing 1 to 16 of 1559 vehicles
+                            </div>
+                            <div className="shop-product-sort-block">
+                                <span className="sort-title">Best Match</span> <span className="sort-btn">Any Makes <IoIosArrowDown /></span>
+                            </div>
                         </div>
 
-                        <div className="shop-page-product-bottom"></div>
+                        <div className="shop-page-product-bottom">
+
+                            {shopItems.map((item) => (
+                                <div className="shop-item" key={item.id}>
+                                    <div className="shop-item-img">
+                                        <img src={item.img} alt="" />
+                                    </div>
+                                    <div className="shop-item-stars">
+                                        {Array.from({ length: item.stars }, (_, i) => (
+                                            <span key={i}><FaStar /></span> 
+                                        ))}
+                                    </div>
+                                    <div className="shop-item-desc">
+                                        {item.desc}
+                                    </div>
+                                    <div className="shop-item-price">
+                                        ${item.price}
+                                    </div>
+                                    <div className="but-btn">
+                                        <span><IoCartOutline /></span> Add To Cart
+                                    </div>
+                                </div>
+                            ))}
+
+
+                        </div>
 
                     </div>
 
