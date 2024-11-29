@@ -6,6 +6,8 @@ import Shop from "../Pages/Shop/Shop";
 import Pricing from "../Pages/Pricing/Pricing";
 import Contact from "../Pages/Contact/Contact";
 import Blog from "../Pages/Blog/Blog";
+import SignIn from "../Pages/SignIn/SignIn";
+import SignUp from "../Pages/SignUp/SignUp";
 
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 
@@ -28,11 +30,11 @@ const Main: React.FunctionComponent = () => {
                     <Route path="/blog" element={<Blog />} />
                     <Route
                         path="/signIn"
-                        element={<div>Add Sign In Page</div>}
+                        element={<SignIn />}
                     />
                     <Route
                         path="/signUp"
-                        element={<div>Add Sign Up Page</div>}
+                        element={<SignUp />}
                     />
                 </Routes>
             </Suspense>
