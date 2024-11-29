@@ -192,3 +192,25 @@
         color: white;
     }
 }
+
+@media screen and (max-width: 1170px) {
+    .blog-content {
+        grid-template-columns: 66% 32%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .blog-content {
+        grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .blog-title {
+        padding: 0 10px 20px 10px;;
+    }
+
+    .blog-content {
+        padding: 0 10px 20px 10px;
+    }
+}
