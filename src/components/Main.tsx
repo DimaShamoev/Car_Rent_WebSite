@@ -5,6 +5,7 @@ import PageLoader from "./PageLoader";
 import Shop from "../Pages/Shop/Shop";
 import Pricing from "../Pages/Pricing/Pricing";
 import Contact from "../Pages/Contact/Contact";
+import Blog from "../Pages/Blog/Blog";
 
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 
@@ -24,7 +25,7 @@ const Main: React.FunctionComponent = () => {
                         path="/contact"
                         element={<Contact />}
                     />
-                    <Route path="/blog" element={<div>Add Blog Page</div>} />
+                    <Route path="/blog" element={<Blog />} />
                     <Route
                         path="/signIn"
                         element={<div>Add Sign In Page</div>}

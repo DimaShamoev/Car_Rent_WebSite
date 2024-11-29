@@ -220,6 +220,10 @@ body {
     bottom: 0;
 }
 
+footer {
+    border-top: 1px solid #ececec;
+}
+
 .footer-top {
     border-bottom: 2px solid #ececec;
 }
