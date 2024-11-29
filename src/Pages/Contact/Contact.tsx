@@ -4,12 +4,74 @@ import { GrLocation } from "react-icons/gr";
 import { IoMailOutline } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact: React.FunctionComponent = () => {
+
+    const leftToRight = {
+        hidden: {
+            x: -300,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const rightToLeft = {
+        hidden: {
+            x: 300,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const downToUp = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+
     return (
-        <div className="contact-page">
-            <div className="contact-tile">Contact Us</div>
-                <div className="contact-map">
+        <motion.div
+            className="contact-page"
+            initial='hidden'
+            whileInView='visible'
+            viewport={{once: true}}
+        >
+            <motion.div
+                className="contact-tile"
+                variants={leftToRight}
+            >
+                Contact Us
+            </motion.div>
+
+            <motion.div
+                className="contact-map"
+                variants={downToUp}
+            >
                 <iframe
                     width="100%"
                     height="600"
@@ -19,10 +81,18 @@ const Contact: React.FunctionComponent = () => {
                 >
                 </iframe>
 
-            </div>
+            </motion.div>
 
-            <div className="get-in-touch-info-block">
-                <div className="get-in-touch-block">
+            <motion.div
+                className="get-in-touch-info-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.3}}
+            >
+                <motion.div
+                    className="get-in-touch-block"
+                    variants={leftToRight}
+                >
                     <div className="get-in-touch-title">Get In Touch</div>
                     <div className="get-in-touch-desc">
                         Etiam pharetra egestas interdum blandit viverra morbi
@@ -55,9 +125,12 @@ const Contact: React.FunctionComponent = () => {
                     <div className="send-btn">
                         <button>Send Message</button>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="contact-info-block">
+                <motion.div
+                    className="contact-info-block"
+                    variants={rightToLeft}
+                >
                     <div className="contact-title">Contact details</div>
                     <div className="contact-info-desc">
                         Etiam pharetra egestas interdum blandit viverra morbi
@@ -102,11 +175,26 @@ const Contact: React.FunctionComponent = () => {
                             <li><a href="#"><FaLinkedinIn /></a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div className="services-block">
-                <div className="services-title">Our Offices</div>
-                <div className="service-branch-list">
+                </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="services-block"
+                initial='hidden'
+                whileInView='visible'
+                viewport={{once: true, amount: 0.3}}
+            >
+                <motion.div
+                    className="services-title"
+                    variants={leftToRight}
+                >
+                    Our Offices
+                </motion.div>
+
+                <motion.div
+                    className="service-branch-list"
+                    variants={downToUp}
+                >
 
                     <div className="service-branch">
                         <div className="branch-city-name">San Francisco</div>
@@ -144,9 +232,9 @@ const Contact: React.FunctionComponent = () => {
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 };
 

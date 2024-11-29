@@ -81,7 +81,7 @@ const Home: React.FunctionComponent = () => {
             opacity: 1,
             transition: {
                 duration: 1,
-                type: "spring",
+                type: "spring"
             },
         },
     };

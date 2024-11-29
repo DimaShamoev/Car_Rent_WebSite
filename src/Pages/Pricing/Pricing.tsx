@@ -1,6 +1,7 @@
 import React from "react";
 import "./Pricing.css"
 import { FaCheck } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Pricing: React.FunctionComponent = () => {
     interface IPricingOffers {
@@ -80,10 +81,54 @@ const Pricing: React.FunctionComponent = () => {
         setCardHoverActive(null)
     }
 
+    const upToDown = {
+        hidden: {
+            y: -100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const downToUp = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
     return (
-        <div className="pricing-page">
-            <div className="pricing-title">Membership Plans</div>
-            <div className="pricing-offers">
+        <motion.div
+            className="pricing-page"
+            initial='hidden'
+            whileInView='visible'
+            viewport={{once: true}}
+        >
+            <motion.div
+                className="pricing-title"
+                variants={upToDown}
+            >
+                Membership Plans
+            </motion.div>
+
+            <motion.div
+                className="pricing-offers"
+                variants={downToUp}
+            >
                 {PricingOffers.map((offer) => (
                     <div 
                         className={`offer-block ${cardHoverActive === offer.id ? 'card-active' : ''}`}
@@ -122,8 +167,8 @@ const Pricing: React.FunctionComponent = () => {
                         
                     </div>
                 ))}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

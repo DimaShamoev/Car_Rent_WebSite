@@ -9,6 +9,7 @@
     font-size: 40px;
     font-weight: 600;
     text-shadow: 0 0 1px black;
+    overflow: hidden;
 }
 
 .pricing-offers {
@@ -16,10 +17,8 @@
     justify-content: space-between;
     padding: 20px 40px;
     gap: 20px;
+    overflow: hidden;
 }
-
-
-/* ------------------------------------ */
 
 .offer-block {
     border: solid 1px #dadada;

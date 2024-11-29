@@ -3,6 +3,7 @@ import "./Shop.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const Shop: React.FunctionComponent = () => {
     interface IShopItems {
@@ -79,13 +80,66 @@ const Shop: React.FunctionComponent = () => {
         },
     ];
 
+    const leftToRight = {
+        hidden: {
+            x: -300,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const upToDown = {
+        hidden: {
+            y: -100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const downToUp = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
     return (
         <div className="shop-page">
             <div className="shop-page-title">Shop List</div>
 
             <div className="shop-page-filter-product">
-                <div className="shop-page-filter-block">
-                    <div className="shop-page-filter-block-wrapper">
+                <motion.div
+                    className="shop-page-filter-block"
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{once: true}}
+                >
+                    <motion.div
+                        className="shop-page-filter-block-wrapper"
+                        variants={leftToRight}
+                    >
                         <div className="shop-categories-list">
                             <span>Categories</span>
                             <ul>
@@ -134,23 +188,34 @@ const Shop: React.FunctionComponent = () => {
                                 <input type="range" />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="shop-page-product-block">
+                <motion.div
+                    className="shop-page-product-block"
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{once: true}}
+                >
 
                     <div className="shop-page-product-block-wrapper">
 
-                        <div className="shop-page-product-top">
+                        <motion.div
+                            className="shop-page-product-top"
+                            variants={upToDown}
+                        >
                             <div className="shop-product-count">
                                 Showing 1 to 16 of 1559 vehicles
                             </div>
                             <div className="shop-product-sort-block">
                                 <span className="sort-title">Best Match</span> <span className="sort-btn">Any Makes <IoIosArrowDown /></span>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="shop-page-product-bottom">
+                        <motion.div
+                            className="shop-page-product-bottom"
+                            variants={downToUp}
+                        >
 
                             {shopItems.map((item) => (
                                 <div className="shop-item" key={item.id}>
@@ -175,12 +240,12 @@ const Shop: React.FunctionComponent = () => {
                             ))}
 
 
-                        </div>
+                        </motion.div>
 
                     </div>
 
 
-                </div>
+                </motion.div>
             </div>
         </div>
     );

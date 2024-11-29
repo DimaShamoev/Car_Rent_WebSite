@@ -1,7 +1,12 @@
+.blog-page {
+    overflow: hidden;
+}
+
 .blog-title {
     padding: 0 40px 30px 40px;
     font-size: 40px;
     font-weight: 700;
+    overflow: hidden;
 }
 
 .blog-content {

@@ -1,15 +1,63 @@
 import React from 'react'
 import './Blog.css'
+import { motion } from 'framer-motion'
 
 const Blog: React.FunctionComponent = () => {
-  return (
-    <div className='blog-page'>
-        <div className="blog-title">
-            Blog List
-        </div>
 
-        <div className="blog-content">
-            <div className="blog-content-left-side">
+    const leftToRight = {
+        hidden: {
+            x: -500,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const rightToLeft = {
+        hidden: {
+            x: 500,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+  return (
+    <motion.div
+        className='blog-page'
+        initial='hidden'
+        whileInView='visible'
+        viewport={{once: true}}
+    >
+        <motion.div
+            className="blog-title"
+            variants={leftToRight}
+        >
+            Blog List
+        </motion.div>
+
+        <motion.div
+            className="blog-content"
+            initial='hidden'
+            whileInView='visible'
+            viewport={{once: true}}
+        >
+            <motion.div
+                className="blog-content-left-side"
+                variants={leftToRight}
+            >
                 <div className="blog-post">
                     <div className="blog-post-img">
                         <img src="img/blog-post-1.jpg" alt="" />
@@ -60,9 +108,12 @@ const Blog: React.FunctionComponent = () => {
                         In 2023, more and more savvy motorists are finding value in the pre-owned vehicle market. Here are 10 used cars that have affordable insurance policies.
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="blog-content-right-side">
+            <motion.div
+                className="blog-content-right-side"
+                variants={rightToLeft}
+            >
                 <div className="categories-block">
                     <span>Categories</span>
                     <ul>
@@ -140,10 +191,10 @@ const Blog: React.FunctionComponent = () => {
                     </div>
                     
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
 
-    </div>
+    </motion.div>
   )
 }
 

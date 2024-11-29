@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaGasPump } from "react-icons/fa";
 import { IoSpeedometer } from "react-icons/io5";
 import { TbManualGearboxFilled } from "react-icons/tb";
+import { motion } from "framer-motion";
 
 const Product: React.FunctionComponent = () => {
     interface IProductVehicles {
@@ -131,6 +132,51 @@ const Product: React.FunctionComponent = () => {
         },
     ];
 
+    const leftToRight = {
+        hidden: {
+            x: -300,
+            opacity: 0
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const upToDown = {
+        hidden: {
+            y: -100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
+    const downToUp = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                duration: 1
+            }
+        }
+    }
+
     return (
         <div className="product-page">
             <div className="product-page-title">
@@ -138,8 +184,16 @@ const Product: React.FunctionComponent = () => {
             </div>
             <div className="product-page-filter-list">
 
-                <div className="product-page-filter">
-                    <div className="product-page-filter-wrapper">
+                <motion.div
+                    className="product-page-filter"
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{once: true}}
+                >
+                    <motion.div
+                        className="product-page-filter-wrapper"
+                        variants={leftToRight}
+                    >
 
                         <div className="filter-location-input filter-input-block">
                             <span className="location-span filter-input-block-span">Location</span>
@@ -231,20 +285,31 @@ const Product: React.FunctionComponent = () => {
                             </ul>
                         </div>
 
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="product-page-cars">
-                    <div className="product-page-cars-sort">
+                <motion.div
+                    className="product-page-cars"
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{once: true}}
+                >
+                    <motion.div
+                        className="product-page-cars-sort"
+                        variants={upToDown}
+                    >
                         <div className="product-count">
                             Showing 1 to 16 of 1559 vehicles
                         </div>
                         <div className="product-sort">
                             sort <a href="#">Any Makes <MdKeyboardArrowDown /></a>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="product-cars-list">
+                    <motion.div
+                        className="product-cars-list"
+                        variants={downToUp}
+                    >
 
                         {productVehicles.map((vehicle) => (
                             <div className="product-vehicle-card" key={vehicle.id}>
@@ -283,9 +348,9 @@ const Product: React.FunctionComponent = () => {
                             </div>
                         ))}
 
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
             </div>
         </div>
     );

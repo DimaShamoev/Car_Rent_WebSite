@@ -11,8 +11,7 @@
 }
 
 .shop-page-filter-block {
-    /* border: solid 1px red;
-    padding: 10px; */
+    overflow: hidden;
     accent-color: black;
 }
 
