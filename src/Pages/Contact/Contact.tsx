@@ -9,14 +9,16 @@ const Contact: React.FunctionComponent = () => {
     return (
         <div className="contact-page">
             <div className="contact-tile">Contact Us</div>
-            <div className="contact-map">
+                <div className="contact-map">
                 <iframe
                     width="100%"
                     height="600"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?q=1%20Grafton%20Street,%20Dublin,%20Ireland&t=p&z=14&output=embed"
+                    title="Google Map of Grafton Street, Dublin"
+                    allowFullScreen
                 >
-                    <a href="https://www.gps.ie/">gps vehicle tracker</a>
                 </iframe>
+
             </div>
 
             <div className="get-in-touch-info-block">

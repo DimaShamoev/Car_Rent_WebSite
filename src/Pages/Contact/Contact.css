@@ -217,3 +217,38 @@
     display: flex;
     gap: 10px;
 }
+
+@media screen and (max-width: 1360px) {
+    .service-branch-list {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .user-name-surname,
+    .user-email-phone {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .get-in-touch-info-block {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contact-tile,
+    .get-in-touch-info-block,
+    .services-title,
+    .service-branch-list  {
+        padding: 0 10px;
+    }
+
+    .brach-contacts {
+        flex-direction: column;
+    }
+}
