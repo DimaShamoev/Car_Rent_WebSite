@@ -13,11 +13,17 @@ This is a **simple UI application** built with React and TypeScript. It serves a
 ### Tech Stack
 <div style='display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 30px'>
     <img src='public/img/vite.svg' alt='Vite' height="40" width='40'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt='React'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height="40" alt='Redux'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt='TypeScript'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src='public/img/framer-motion.svg' alt='FramerMotion' height="40" width='40'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src='./public/img/react-hook-form.png' height='45' width='45' alt='React_Hook_Form'>
+    <span>&nbsp;&nbsp;&nbsp;</span>
     <img src='public/img/react-icon.svg' alt='React_Icon' height='40' width='40' >
 </div>
 
