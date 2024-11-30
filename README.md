@@ -1,5 +1,5 @@
-<div style='display: flex; justify-content: center;'>
-    <img src='public/img/header-readme.png' style='background-color: white; padding: 10px; width: 100%'>
+<div style='background-color: white; display: flex; justify-content: center;'>
+    <img src='public/img/header-logo.svg' style='background-color: white; padding: 10px; width: 100%'>
 </div>
 
 # Car Rent App
