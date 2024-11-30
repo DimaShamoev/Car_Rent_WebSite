@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignIn.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
-import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 const SignIn: React.FunctionComponent = () => {
     interface ILoginForm {
@@ -9,16 +9,13 @@ const SignIn: React.FunctionComponent = () => {
         password: string
     }
 
-    const { register, handleSubmit, formState: {errors} } = useForm<ILoginForm>({
+    const { register, handleSubmit, formState: {errors}, reset } = useForm<ILoginForm>({
         defaultValues: {}
     })
 
     const submit: SubmitHandler<ILoginForm> = data => {
         console.log(data)
-    }
-
-    const error: SubmitErrorHandler<ILoginForm> = data => {
-        console.log(data)
+        reset()
     }
 
     return (
@@ -26,20 +23,18 @@ const SignIn: React.FunctionComponent = () => {
             <div className="sign-in-block">
                 <div className="sign-in-title">Sing In</div>
                 <div className="sign-in-form-block">
-                    <form onSubmit={handleSubmit(submit, error)}>
+                    <form onSubmit={handleSubmit(submit)}>
                         <div className="input-block">
                             <span>Enter Mail</span>
                             <input
                                 type="text" 
                                 placeholder="example@gmail.com" 
-                                {
-                                    ...register('email',
-                                        {
-                                            required: "This Field Is Required",
-                                            pattern: {
-                                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                                                message: "Invalid email format",
-                                            }
+                                {...register('email', {
+                                                required: "This Field Is Required",
+                                                pattern: {
+                                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                                    message: "Invalid email format",
+                                                }
                                         })
                                 }
                             />
@@ -50,10 +45,8 @@ const SignIn: React.FunctionComponent = () => {
                             <input
                                 type="password"
                                 placeholder="********"
-                                {
-                                    ...register('password',
-                                    {required: "This Field Is Required"})
-                                } />
+                                {...register('password', {required: "This Field Is Required"})}
+                            />
                             {errors.password && <p style={{ color: "red" }}>{errors.password.message}</p>}
                         </div>
                         <div className="btns-block">

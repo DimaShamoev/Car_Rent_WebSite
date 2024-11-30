@@ -12,12 +12,13 @@ const SignUp: React.FunctionComponent = () => {
         password: string
     }
 
-    const {register, handleSubmit} = useForm<ISignUpForm>({
-
-    })
+    const {register, handleSubmit, formState: {errors}, reset} = useForm<ISignUpForm>({
+        mode: 'onSubmit'
+    })  
 
     const regSubmit: SubmitHandler<ISignUpForm> = data => {
         console.log(data);
+        reset();
     }
 
 
@@ -30,22 +31,55 @@ const SignUp: React.FunctionComponent = () => {
                         <form onSubmit={handleSubmit(regSubmit)}>
                             <div className="input-block">
                                 <span>Enter Username</span>
-                                <input type="text" placeholder="Usernickname" {...register('name')} />
+                                <input
+                                    type="text" placeholder="Usernickname"
+                                    {...register('name', {required: "This Field Is Required"})}
+                                />
+                                {errors.name && <p className='error'>{errors.name.message}</p>}
                             </div>  
 
                             <div className="input-block">
                                 <span>Enter Mail</span>
-                                <input type="text" placeholder="example@gmail.com" {...register('email')} />
+                                <input
+                                    type="text"
+                                    placeholder="example@gmail.com"
+                                    {...register('email', {
+                                        required: "This Field Is Required",
+                                        pattern: {
+                                           value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                           message: "Invalid email format",
+                                        }
+                                    })}
+                                />
+                                {errors.email && <p className='error'>{errors.email.message}</p>}
                             </div>
 
                             <div className="input-block">
                                 <span>Enter Phone</span>
-                                <input type="text" placeholder="+987 654 321 000" {...register('phone')} />
+                                <input
+                                    type="text"
+                                    placeholder="+987 654 321 000"
+                                    {...register('phone', {
+                                            required: "This Field Is Required",
+                                            pattern: {
+                                                value: /^\+[0-9]{1,15}$/,
+                                                message: "Invalid Phone format"
+                                            }
+                                    })}
+                                />
+                                {errors.phone && <p className='error'>{errors.phone.message}</p>}
                             </div>  
 
                             <div className="input-block">
                                 <span>Enter Password</span>
-                                <input type="password" placeholder="********" {...register('password')} />
+                                <input
+                                    type="password"
+                                    placeholder="********"
+                                    {...register('password', {
+                                        required: "This Field Is Required",
+                                    })}
+                                />
+                                {errors.password && <p className='error'>{errors.password.message}</p>}
                             </div>
                             <div className="btns-block">
                                 <div className="remember-btn">

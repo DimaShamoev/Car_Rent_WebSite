@@ -23,10 +23,3 @@ const App: React.FunctionComponent = () => {
 };
 
 export default App;
-
-
-// ToDos
-// 1 Sign up / Sign In Pages
-// 2 Animate pages from Product ~ Last page
-
-// Link https://creativelayers.net/themes/boxcar-html/index-10.html#
