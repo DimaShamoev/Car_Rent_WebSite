@@ -54,3 +54,6 @@ Start the development server to view the app locally:
 npm run dev
 yarn dev
 ```
+
+###Future Plans
+- Recreate, make it functional
