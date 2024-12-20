@@ -57,3 +57,4 @@ yarn dev
 
 ###Future Plans
 - Recreate, make it functional
+- Connect with database
