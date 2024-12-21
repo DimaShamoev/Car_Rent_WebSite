@@ -18,6 +18,7 @@ This is a **simple UI application** built with React and TypeScript. It serves a
     <span>&nbsp;&nbsp;&nbsp;</span>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height="40" alt='Redux'>
     <span>&nbsp;&nbsp;&nbsp;</span>
+
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt='TypeScript'>
     <span>&nbsp;&nbsp;&nbsp;</span>
     <img src='public/img/framer-motion.svg' alt='FramerMotion' height="40" width='40'>
@@ -26,6 +27,7 @@ This is a **simple UI application** built with React and TypeScript. It serves a
     <span>&nbsp;&nbsp;&nbsp;</span>
     <img src='public/img/react-icon.svg' alt='React_Icon' height='40' width='40' >
 </div>
+
 
 
 ### Inspiration
