@@ -28,7 +28,6 @@ This is a **simple UI application** built with React and TypeScript. It serves a
 </div>
 
 
-
 ### Inspiration
 **Boxcar Website:**
 https://creativelayers.net/themes/boxcar-html/index-10.html#
