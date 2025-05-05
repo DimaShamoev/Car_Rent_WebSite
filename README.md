@@ -55,6 +55,6 @@ npm run dev
 yarn dev
 ```
 
-###Future Plans
+### Future Plans
 - Recreate, make it functional
 - Connect with database
