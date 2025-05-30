@@ -2,15 +2,15 @@
     <img src='public/img/header-logo.svg' style='background-color: white; padding: 10px; width: 100%'>
 </div>
 
-# Car Rent App
+# Car Rent App 🚘
 This is a **simple UI application** built with React and TypeScript. It serves as a user-friendly interface showcasing modern design principles and responsive layouts. Note that this app focuses on **UI-only functionality** and does not include features like renting, payments, or ordering.
 
-### Features
+### Features ✨️
 - Built with **Vite React** and **TypeScript**.
 - Clean and responsive design.
 - **No backend integration** or advanced functionality—purely focused on UI components.
 
-### Tech Stack
+### Tech Stack 🛠
 <div style='display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 30px'>
     <img src='public/img/vite.svg' alt='Vite' height="40" width='40'>
     <span>&nbsp;&nbsp;&nbsp;</span>
